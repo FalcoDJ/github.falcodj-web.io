@@ -1,0 +1,256 @@
+:root {
+    --charcoal: #264653;
+    --persian-green: #2A9D8F;
+    --maize-crayola: #E9C46A;
+    --sandy-brown: #F4A261;
+    --burnt-sienna: #E76F51;
+
+    --background-color: white;
+    --desktop-gray: #f6f6f6;
+    --shadow-color: #aaa;
+    --primary-text-color: black;
+    --secondary-text-color: white;
+}
+
+* {
+    margin: 0;
+    padding: 0 0;
+    box-sizing: border-box;
+}
+
+li {
+    text-decoration: none;
+    list-style: none;
+}
+
+li a {
+    color: inherit;
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+}
+
+.web-title {
+    box-shadow: 0px 2px 5px var(--shadow-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    padding: 1em 0em;
+    position: relative;
+}
+
+.fa-bars {
+    position: absolute;
+    right: 0;
+    width: 2em;
+}
+
+.article-title h1 {
+    line-height: auto;
+}
+
+.article-footer {
+    padding: 1em;
+    background-color: #e3e3e3;
+    border-radius: 0 0 0.5em 0.5em;
+
+}
+
+.nav-bar {
+    display: flex;
+    flex-direction: column;
+    max-height: 0;
+    margin-top: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease-out;
+    box-shadow: 0px 2px 3px var(--shadow-color);
+    width: 100%;
+    align-items: center;
+    background-color: var(--charcoal);
+    z-index: 1;
+}
+
+.nav-bar li {
+    margin: 0.75em;
+    color: var(--secondary-text-color)
+}
+
+.nav-bar i {
+    margin-right: 0.5em;
+}
+
+.section {
+    color: var(--primary-text-color);
+    border-radius: 0.5em;
+    box-shadow: 0px 2px 5px var(--shadow-color);
+    margin: 1em;
+}
+
+.section .article-title {
+    padding: 1em;
+    border-radius: 0.5em 0.5em 0 0;
+}
+
+.section .article-content {
+    margin: 1em;
+}
+
+.section .article-title {
+    color: var(--secondary-text-color);
+}
+
+.section.t1 .article-title {
+    background-color: var(--persian-green);
+}
+
+.section.t2 .article-title {
+    background-color: var(--maize-crayola);
+}
+
+.section.t3 .article-title {
+    background-color: var(--sandy-brown);
+}
+
+.section.t4 .article-title {
+    background-color: var(--burnt-sienna);
+}
+
+.section p {
+    margin: 1em 0;
+}
+
+.section .article-title {
+    font-family: 'Anek Malayalam', sans-serif;
+}
+
+
+/* Desktop Config NOW!! */
+@media only screen and (min-width : 1200px) {
+    :root {
+        --shadow-color: #e3e3e3;
+    }
+
+    body {
+        display: flex;
+        flex-direction: row;
+        /* justify-content: space-between; */
+
+    }
+
+    header {
+        flex-direction: row;
+        box-shadow: 2px 0px 8px var(--shadow-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 12vw;
+        height: 100vh;
+        position: sticky;
+        left: 0;
+        top: 0;
+    }
+
+    .web-title {
+        margin: auto;
+    }
+
+    i.fa-bars {
+        display: none;
+    }
+
+    .web-title {
+        width: fit-content;
+        box-shadow: none;
+        margin: 0em 2em;
+    }
+
+    .nav-bar {
+        background-color: white;
+        /* background-color: var(--charcoal); */
+        max-height: auto;
+        max-height: none;
+        box-shadow: none;
+        align-items: center;
+    }
+
+    .nav-bar li {
+        color: black;
+        font-size: 18px;
+        margin: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .nav-bar li a {
+        transition: margin-left 0.15s ease-out;
+        padding: 0.75em;
+    }
+
+    .nav-bar li:hover {
+        background-color: var(--charcoal);
+    }
+
+    .nav-bar li:hover a {
+        margin-left: 1em;
+        background-color: var(--persian-green);
+        color: white;
+        width: 100%;
+        height: 100%;
+    }
+
+    .nav-bar li:active a {
+        background-color: var(--charcoal);
+    }
+
+    main {
+        background-color: var(--desktop-gray);
+        padding: 1em;
+        width: 100%;
+    }
+
+    .section .article-title {
+        font-size: 0.8em;
+    }
+
+    .section {
+        box-shadow: 0px 2px 4px var(--shadow-color);
+        margin: auto;
+        margin-bottom: 2em;
+        max-width: 90%;
+    }
+
+    .section .article-content {
+        padding: 1em;
+        margin: 0;
+        background-color: white;
+    }
+
+    .article-footer ul {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .article-footer ul li {
+        margin-right: 1em;
+    }
+
+    .section .article-content p:last-of-type {
+        margin-bottom: 0;
+    }
+
+    .section .article-content p:first-of-type {
+        margin-top: 0;
+    }
+}
